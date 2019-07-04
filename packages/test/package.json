@@ -11,7 +11,8 @@
     "@ledgerhq/hw-app-xrp": "^4.6.0",
     "@ledgerhq/hw-transport-mocker": "^4.6.0",
     "@ledgerhq/hw-transport-node-hid": "^4.6.0",
-    "budo": "^11.0.1"
+    "budo": "^11.0.1",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "flow-bin": "^0.66.0",
@@ -25,6 +26,9 @@
     "flow": "flow",
     "clean": "rm -rf lib/",
     "build": "cd ../.. && export PATH=$(yarn bin):$PATH && cd - && babel --source-maps -d lib src",
-    "watch": "cd ../.. && export PATH=$(yarn bin):$PATH && cd - && babel --watch --source-maps -d lib src & flow-copy-source -w -v src lib"
-  }
+    "watch": "cd ../.. && export PATH=$(yarn bin):$PATH && cd - && babel --watch --source-maps -d lib src & flow-copy-source -w -v src lib",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
