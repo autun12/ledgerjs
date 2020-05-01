@@ -29,7 +29,8 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@ledgerhq/hw-transport-node-hid": "^4.6.0"
+    "@ledgerhq/hw-transport-node-hid": "^4.6.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "flow-bin": "^0.66.0",
@@ -40,6 +41,9 @@
     "clean": "rm -rf lib/",
     "start": "node ./lib/cmd.js",
     "build": "cd ../.. && export PATH=$(yarn bin):$PATH && cd - && babel --source-maps -d lib src && flow-copy-source -v src lib",
-    "watch": "cd ../.. && export PATH=$(yarn bin):$PATH && cd - && babel --watch --source-maps -d lib src & flow-copy-source -w -v src lib"
-  }
+    "watch": "cd ../.. && export PATH=$(yarn bin):$PATH && cd - && babel --watch --source-maps -d lib src & flow-copy-source -w -v src lib",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
