@@ -22,7 +22,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "fbjs": "^0.8.16",
+    "fbjs": "^2.0.0",
     "invariant": "^2.2.2",
     "lodash": "^4.17.4",
     "normalizr-gre": "^3.2.4",
